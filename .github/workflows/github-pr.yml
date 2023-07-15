@@ -6,12 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v2
-        with:
-          channel: 'stable'
       - run: npm install
       - run: npm run build
-      - run: npm start:prod
       - uses: rossjrw/pr-preview-action@v1
         with:
           source-dir: ./dist
